@@ -1,18 +1,33 @@
 public class Dog extends Animal {
-    public Dog(String name, int run, int swim, double jump) {
-        this.name = name;
-        this.run = run;
-        this.swim = swim;
-        this.jump = jump;
+    private final int run = 500;
+    private final int swim = 10;
+    private final double jump = 0.5;
 
-
+    @Override
+    protected void run(int length) {
+        if ((length < 0) || (length > run)) {
+            System.out.println("dog.run: false");
+        } System.out.println("dog.run: true");
     }
 
-    public void dogInfo() {
-        if (run >= 200 || swim >= 10 || jump >= 0.5) {
-            return;
+    @Override
+    public void swim(int length) {
+        if ((length < 0) || (length > swim)) {
+            System.out.println("dog.swim: false");
+        } System.out.println("dog.swim: true");
+    }
+
+    @Override
+    public void jump(double height) {
+        if ((height >= 0) && (height <= jump)){
+            System.out.println("dog.jump: true");
+        }else {
+            System.out.println("dog.jump: false");
         }
-        System.out.println("Собака " + name + "\n пробежал " + run + " метров" + "\n проплыл " + swim + " метров" + "\n прыгнул вверх на " + jump + " метр ");
+    }
+
+    @Override
+    public void info() {
+        System.out.println();
     }
 }
-
