@@ -1,30 +1,29 @@
 public class Plate {
-    private int amountOfFood;
+    private int volumeFood;
 
-    Plate(int amountOfFood) {
-        this.amountOfFood = amountOfFood;
+    Plate(int amountFood) {
+        this.volumeFood = amountFood;
     }
 
     @Override
     public String toString() {
-        return "В тарелке осталось: " + amountOfFood;
+        return "В тарелке осталось: " + volumeFood;
     }
 
     void decreaseFood(int eating) {
-        if (amountOfFood >= eating) {
-            amountOfFood -= eating;
+        if (volumeFood >= eating) {
+            volumeFood -= eating;
         }
     }
 
-    int getAmountOfFood() {
-        return amountOfFood;
+    int getVolumeFood() {
+        return volumeFood;
     }
 
-    void increaseFood(int amount) {
-        amountOfFood += amount;
+    void increaseFood(int volume) {
+        volumeFood += volume;
     }
 }
-
 
 
 
