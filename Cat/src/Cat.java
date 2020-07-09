@@ -1,6 +1,6 @@
 public class Cat {
-    private String name;
-    private int eating;
+    private final String name;
+    private final int eating;
     private boolean satiety;
 
     Cat(String name, int eating) {
@@ -15,7 +15,7 @@ public class Cat {
     }
 
     void eat(Plate plate) {
-        if (plate.getAmountOfFood() > eating) {
+        if (plate.getVolumeFood() > eating) {
             plate.decreaseFood(eating);
             satiety = true;
         }
