@@ -1,20 +1,30 @@
 public class Main {
     public static void main(String[] args) {
+
         System.out.println();
-        Cat[] x = {new Cat("Barsik", 25), new Cat("Mursik", 15), new Cat("Boris", 10)};
+        Cat[] arr = {new Cat("Barsik", 25), new Cat("Mursik", 15), new Cat("Boris", 10)};
         Plate plate = new Plate(0);
-        for (Cat c : x) {
-            System.out.println(c);
-        }
+            int i = 0;
+            while (i < arr.length) {
+                Cat c = arr[i];
+                System.out.println(c);
+                i++;
+            }
+
         System.out.println("\n" + plate);
-        System.out.println("\nВ тарелку положили");
+        System.out.println("\nВ тарелку положили еду.");
         plate.increaseFood(100);
         System.out.println(plate);
         System.out.println("\nКоты едят:");
-        for (Cat c : x) {
-            c.eat(plate);
-            System.out.println(c);
-            System.out.println(plate);
-        }
+
+            i = 0;
+            while (i < arr.length) {
+                Cat c = arr[i];
+                c.eat(plate);
+                System.out.println(c);
+                System.out.println(plate);
+                i++;
+            }
+
     }
 }
