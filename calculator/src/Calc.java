@@ -1,30 +1,13 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
 
 public class Calc extends JFrame {
 
-    private JButton jbtNum1;
-    private JButton jbtNum2;
-    private JButton jbtNum3;
-    private JButton jbtNum4;
-    private JButton jbtNum5;
-    private JButton jbtNum6;
-    private JButton jbtNum7;
-    private JButton jbtNum8;
-    private JButton jbtNum9;
-    private JButton jbtNum0;
     private JButton jbtEqual;
-    private JButton jbtAdd;
-    private JButton jbtSubtract;
-    private JButton jbtMultiply;
-    private JButton jbtDivide;
-    private JButton jbtSolve;
-    private JButton jbtClear;
     private double TEMP;
     private double SolveTEMP;
-    private JTextField jtfResult;
+    private final JTextField jtfResult;
 
     Boolean addBool = false;
     Boolean subBool = false;
@@ -36,31 +19,47 @@ public class Calc extends JFrame {
     public Calc() {
 
         JPanel p1 = new JPanel();
-        p1.setLayout(new GridLayout(4, 3));
+        p1.setLayout(new GridLayout(3, 3));
+        JButton jbtNum1;
         p1.add(jbtNum1 = new JButton("1"));
+        JButton jbtNum2;
         p1.add(jbtNum2 = new JButton("2"));
+        JButton jbtNum3;
         p1.add(jbtNum3 = new JButton("3"));
+        JButton jbtNum4;
         p1.add(jbtNum4 = new JButton("4"));
+        JButton jbtNum5;
         p1.add(jbtNum5 = new JButton("5"));
+        JButton jbtNum6;
         p1.add(jbtNum6 = new JButton("6"));
+        JButton jbtNum7;
         p1.add(jbtNum7 = new JButton("7"));
+        JButton jbtNum8;
         p1.add(jbtNum8 = new JButton("8"));
+        JButton jbtNum9;
         p1.add(jbtNum9 = new JButton("9"));
+        JButton jbtNum0;
         p1.add(jbtNum0 = new JButton("0"));
+        JButton jbtClear;
         p1.add(jbtClear = new JButton("C"));
 
         JPanel p2 = new JPanel();
         p2.setLayout(new FlowLayout());
-        p2.add(jtfResult = new JTextField(20));
+        p2.add(jtfResult = new JTextField(10));
         jtfResult.setHorizontalAlignment(JTextField.RIGHT);
         jtfResult.setEditable(false);
 
         JPanel p3 = new JPanel();
         p3.setLayout(new GridLayout(5, 1));
+        JButton jbtAdd;
         p3.add(jbtAdd = new JButton("+"));
+        JButton jbtSubtract;
         p3.add(jbtSubtract = new JButton("-"));
+        JButton jbtMultiply;
         p3.add(jbtMultiply = new JButton("*"));
+        JButton jbtDivide;
         p3.add(jbtDivide = new JButton("/"));
+        JButton jbtSolve;
         p3.add(jbtSolve = new JButton("="));
 
         JPanel p = new JPanel();
@@ -88,11 +87,10 @@ public class Calc extends JFrame {
         jbtDivide.addActionListener(new ListenToDivide());
         jbtSolve.addActionListener(new ListenToSolve());
         jbtClear.addActionListener(new ListenToClear());
-    } //JavaCaluclator()
+    }
 
     class ListenToClear implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            //display = jtfResult.getText();
             jtfResult.setText("");
             addBool = false;
             subBool = false;
@@ -209,12 +207,12 @@ public class Calc extends JFrame {
     class ListenToSolve implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             SolveTEMP = Double.parseDouble(jtfResult.getText());
-            if (addBool == true) SolveTEMP = SolveTEMP + TEMP;
-            else if (subBool == true)
+            if (addBool) SolveTEMP = SolveTEMP + TEMP;
+            else if (subBool)
                 SolveTEMP = SolveTEMP - TEMP;
-            else if (mulBool == true)
+            else if (mulBool)
                 SolveTEMP = SolveTEMP * TEMP;
-            else if (divBool == true)
+            else if (divBool)
                 SolveTEMP = SolveTEMP / TEMP;
             jtfResult.setText(Double.toString(SolveTEMP));
 
