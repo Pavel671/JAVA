@@ -1,31 +1,30 @@
-import javax.swing.*;
+mport javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class Calc extends JFrame {
     Calc() {
         setBounds(300, 300, 300, 300);
         setLayout(new BorderLayout());
         setVisible(true);
-        JTextArea display = new JTextArea();//дисплей калькулятора
-        JPanel buttonPanel = new JPanel(new GridLayout(3, 5));//панель с кнопками
-        JButton button0 = new JButton("0");//кнопка 0
-        JButton button1 = new JButton("1");//кнопка 1
-        JButton button2 = new JButton("2");//кнопка 2
-        JButton button3 = new JButton("3");//кнопка 3
-        JButton button4 = new JButton("4");//кнопка 4
-        JButton button5 = new JButton("5");//кнопка 5
-        JButton button6 = new JButton("6");//кнопка 6
-        JButton button7 = new JButton("7");//кнопка 7
-        JButton button8 = new JButton("8");//кнопка 8
-        JButton button9 = new JButton("9");//кнопка 9
-        JButton buttonSum = new JButton("+");//кнопка +
-        JButton buttonBack = new JButton("C");//кнопка С
-        JButton buttonDivide = new JButton("/");//кнопка /
-        JButton buttonSub = new JButton("-");//кнопка -
-        JButton buttonMul = new JButton("*");//кнопка *
-        JButton buttonStart = new JButton("=");//кнопка =
+        JTextArea display = new JTextArea();
+        JPanel buttonPanel = new JPanel(new GridLayout(3, 5));
+        JButton button0 = new JButton("0");
+        JButton button1 = new JButton("1");
+        JButton button2 = new JButton("2");
+        JButton button3 = new JButton("3");
+        JButton button4 = new JButton("4");
+        JButton button5 = new JButton("5");
+        JButton button6 = new JButton("6");
+        JButton button7 = new JButton("7");
+        JButton button8 = new JButton("8");
+        JButton button9 = new JButton("9");
+        JButton buttonSum = new JButton("+");
+        JButton buttonBack = new JButton("C");
+        JButton buttonDivide = new JButton("/");
+        JButton buttonSub = new JButton("-");
+        JButton buttonMul = new JButton("*");
+        JButton buttonStart = new JButton("=");
 
 
         setBounds(300, 300, 300, 300);
@@ -159,17 +158,25 @@ public class Calc extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int secondValue = Integer.valueOf(display.getText());
-                if ("+".equals(operation[0])) {
-                    display.setText((firstValue[0] + secondValue) + "");
+                switch (operation[0]) {
+                    case "+":
+                        display.setText((firstValue[0] + secondValue) + "");
+                        break;
                 }
-                if ("-".equals(operation[0])) {
-                    display.setText((firstValue[0] - secondValue) + "");
+                switch (operation[0]) {
+                    case "-":
+                        display.setText((firstValue[0] - secondValue) + "");
+                        break;
                 }
-                if ("*".equals(operation[0])) {
-                    display.setText((firstValue[0] * secondValue) + "");
+                switch (operation[0]) {
+                    case "*":
+                        display.setText((firstValue[0] * secondValue) + "");
+                        break;
                 }
-                if ("/".equals(operation[0])) {
-                    display.setText((firstValue[0] / secondValue) + "");
+                switch (operation[0]) {
+                    case "/":
+                        display.setText((firstValue[0] / secondValue) + "");
+                        break;
                 }
                 firstValue[0] = 0;
                 operation[0] = "+";
@@ -177,5 +184,6 @@ public class Calc extends JFrame {
         });
     }
 }
+
 
 
