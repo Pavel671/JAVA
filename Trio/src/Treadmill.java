@@ -16,7 +16,7 @@ public class Treadmill extends Obstacle {
 
     @Override
     protected boolean moving(Human human) {
-        System.out.println("Беговая дорожка" + super.getName() + " длина: " + this.length);
+        System.out.println("" + super.getName() + " длина: " + this.length);
 
         human.run();
 
@@ -33,7 +33,7 @@ public class Treadmill extends Obstacle {
 
     @Override
     protected boolean moving(Robot robot) {
-        System.out.println("Беговая дорожка " + super.getName() + "длина: " + this.length);
+        System.out.println("" + super.getName() + " длина: " + this.length);
 
         robot.run();
 
@@ -50,7 +50,7 @@ public class Treadmill extends Obstacle {
 
     @Override
     protected boolean moving(Cat cat) {
-        System.out.println("Беговая дорожка " + super.getName() + "длина: " + this.length);
+        System.out.println("" + super.getName() + " длина: " + this.length);
 
         cat.run();
 
