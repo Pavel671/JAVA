@@ -15,7 +15,7 @@ public class Wall extends Obstacle {
 
         @Override
         protected boolean moving(Human human) {
-            System.out.println("Стена" + super.getName() + "Высота: " + this.heigth);
+            System.out.println("" + super.getName() + " высота: " + this.heigth);
 
             human.jump();
 
@@ -32,7 +32,7 @@ public class Wall extends Obstacle {
 
         @Override
         protected boolean moving(Robot robot) {
-            System.out.println("Стена " + super.getName() + "высота: " + this.heigth);
+            System.out.println("" + super.getName() + " высота: " + this.heigth);
 
             robot.jump();
 
@@ -49,7 +49,7 @@ public class Wall extends Obstacle {
 
         @Override
         protected boolean moving(Cat cat) {
-            System.out.println("Стена " + super.getName() + " высота: " + this.heigth);
+            System.out.println("" + super.getName() + " высота: " + this.heigth);
 
             cat.jump();
 
@@ -64,14 +64,3 @@ public class Wall extends Obstacle {
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
