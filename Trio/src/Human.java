@@ -1,11 +1,15 @@
 public class Human implements Action {
-    public int run;
-    public int jump;
+    public final int run;
+    public final int jump;
 
+    @Override
+    public void action(int run, int jump){
+        System.out.println("run: " + run + "jump: " + jump);
+    }
 
-    public Human(int jump, int run) {
-        this.jump = jump;
+    public Human(int run, int jump) {
         this.run = run;
+        this.jump = jump;
     }
 
 
