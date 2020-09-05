@@ -10,7 +10,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/lesson3/main.fxml"));
-        primaryStage.setTitle("BrainsChat Client");
+        primaryStage.setTitle("Chat ");
         primaryStage.setScene(new Scene(root, 400, 400));
         primaryStage.show();
     }
