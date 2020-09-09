@@ -32,6 +32,6 @@ public class MainTest {
 
     @Test
     public void testTask1() {
-        Assert.assertTrue(Arrays.equals(array, test.doIt(testArray)), "Arrays ara not equals");
+        Assert.assertTrue(Arrays.equals(array, test.doIt(testArray)), "Arrays not equals");
     }
 }
